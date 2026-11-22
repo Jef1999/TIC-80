@@ -148,10 +148,8 @@ android {
                             "-DBUILD_EDITORS=${ticEditors}",
                             "-DCMAKE_BUILD_TYPE=Release",
                             "-DBUILD_WITH_ALL=OFF",
-                          "-DBUILD_WITH_LUA=ON",
+                            "-DBUILD_WITH_LUA=ON",
                             "-DBUILD_WITH_JS=ON",
-
-
                             // a phone has a screen to touch and no keys
                             "-DBUILD_TOUCH_INPUT=ON"
             }
