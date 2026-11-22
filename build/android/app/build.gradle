@@ -112,7 +112,7 @@ def ticVersionName = "${ticVersionMajor}.${ticVersionMinor}.${ticVersionShownPat
 // free. This gradle project is the only Android build path there is, so the
 // flag cannot be left to the caller's memory: with PRO hardcoded off, the
 // paid channel shipped a build without the features it pays for.
-def ticPro = project.findProperty('PRO') ?: 'OFF'
+def ticPro = project.findProperty('PRO') ?: 'ON'
 
 // The browser-only APK is the same variant built with -PEDITORS=OFF: no IDE,
 // the game browser as the whole UI.
@@ -147,7 +147,11 @@ android {
                 arguments "-DBUILD_PRO=${ticPro}",
                             "-DBUILD_EDITORS=${ticEditors}",
                             "-DCMAKE_BUILD_TYPE=Release",
-                            "-DBUILD_WITH_ALL=ON",
+                            "-DBUILD_WITH_ALL=OFF",
+                          "-DBUILD_WITH_LUA=ON",
+                            "-DBUILD_WITH_JS=ON",
+
+
                             // a phone has a screen to touch and no keys
                             "-DBUILD_TOUCH_INPUT=ON"
             }
